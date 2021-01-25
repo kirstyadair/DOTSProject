@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void Start()
+    /*private void Start()
     {
         manager = World.DefaultGameObjectInjectionWorld.EntityManager;
         GameObjectConversionSettings settings = GameObjectConversionSettings.FromWorld(World.DefaultGameObjectInjectionWorld, new BlobAssetStore());
@@ -41,5 +41,5 @@ public class GameManager : MonoBehaviour
             manager.Instantiate(tokenEntityPrefab);
             numSpawned++;
         }
-    }
+    }*/
 }

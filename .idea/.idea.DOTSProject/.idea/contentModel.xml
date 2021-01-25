@@ -8,8 +8,11 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="GameManager.cs" t="Include" />
-          <e p="Spawner.cs" t="Include" />
-          <e p="SpawnerData.cs" t="Include" />
+          <e p="Spawner" t="Include">
+            <e p="Spawner.cs" t="Include" />
+            <e p="SpawnerAuthoringComponent.cs" t="Include" />
+            <e p="SpawnerSystem.cs" t="Include" />
+          </e>
         </e>
       </e>
       <e p="DOTSProject.sln" t="IncludeFlat" />

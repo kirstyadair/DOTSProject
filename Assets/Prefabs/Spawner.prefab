@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 669669373410025469}
   - component: {fileID: 8213726366438931900}
-  - component: {fileID: 7017903327609654722}
+  - component: {fileID: 1609904552869963904}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ConversionMode: 0
---- !u!114 &7017903327609654722
+--- !u!114 &1609904552869963904
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -54,10 +54,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 4097958711340152927}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2adaf8bdc8b1889429f98e290ee677a4, type: 3}
+  m_Script: {fileID: 11500000, guid: 227698e6ac351cd4297b449c347c02e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numToSpawn: 3
-  numAlreadySpawned: 0
-  tokenToSpawn: {fileID: 3365746871063221007, guid: 403d9c501ba320b4ca8c56eabececc25,
-    type: 3}
+  _spawnerPrefab: {fileID: 4097958711340152927}
+  _spawnRate: 3

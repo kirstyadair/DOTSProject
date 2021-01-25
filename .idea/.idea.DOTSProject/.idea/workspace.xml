@@ -21,9 +21,13 @@
   <component name="ChangeListManager">
     <list default="true" id="ac1b4857-15fb-44dd-8c3e-d89b569ae770" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DOTSProject/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DOTSProject/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DOTSProject/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DOTSProject/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DOTSProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DOTSProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spawner.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spawner.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Spawner.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpawnerData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpawnerData.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +38,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Spawner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.collections@0.8.0-preview.5/Unity.Collections/CollectionHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -42,7 +46,10 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/SpawnerData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Spawner/Spawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Spawner/SpawnerAuthoringComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Spawner/SpawnerSystem.cs" />
       </list>
     </option>
   </component>
@@ -86,6 +93,7 @@
       <updated>1610383432591</updated>
       <workItem from="1610383442663" duration="594000" />
       <workItem from="1611500083763" duration="5540000" />
+      <workItem from="1611591078790" duration="3552000" />
     </task>
     <servers />
   </component>
@@ -104,14 +112,16 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="778" y="236" key="RiderGenerateDialog" timestamp="1611500803735">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="622" y="173" key="RiderGenerateDialog" timestamp="1611594858274">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="622" y="173" key="RiderGenerateDialog/0.0.1536.824@0.0.1536.824" timestamp="1611594858274" />
     <state x="778" y="236" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1611500803735" />
   </component>
 </project>
