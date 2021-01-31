@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4796867630852961918}
   - component: {fileID: 2380540534877862888}
   m_Layer: 0
-  m_Name: Token
+  m_Name: TokenRed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MotionType: 0
-  m_Mass: 1
+  m_Mass: 10
   m_LinearDamping: 0.01
   m_AngularDamping: 0.05
   m_InitialLinearVelocity:

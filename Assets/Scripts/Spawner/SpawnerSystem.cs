@@ -5,19 +5,21 @@ using Unity.Jobs;
 using Unity.Mathematics;
 using Unity.Transforms;
 using UnityEngine;
-using Random = UnityEngine.Random;
+using Random = Unity.Mathematics.Random;
 
 public class SpawnerSystem : JobComponentSystem
 {
     private struct SpawnerJob : IJobForEachWithEntity<Spawner, LocalToWorld>
     {
         private float _deltaTime;
+        private Random _random;
         private EntityCommandBuffer.Concurrent _ecb;
         
-        public SpawnerJob(float deltaTime, EntityCommandBuffer.Concurrent ecb)
+        public SpawnerJob(float deltaTime, EntityCommandBuffer.Concurrent ecb, Random random)
         {
             _ecb = ecb;
             _deltaTime = deltaTime;
+            _random = random;
         }
         
         public void Execute(Entity entity, int index, ref Spawner spawner, ref LocalToWorld localToWorld)
@@ -28,13 +30,26 @@ public class SpawnerSystem : JobComponentSystem
             {
                 spawner.numAlreadySpawned++;
                 spawner.timeToNextSpawn = spawner.timeBetweenSpawns;
-                Entity spawnedPrefab = _ecb.Instantiate(index, spawner.spawnerPrefab);
-                float3 currentPos = localToWorld.Position;
-                float3 newPos = new float3(Random.Range(currentPos.x - 1.0f, currentPos.x + 1.0f), Random.Range(currentPos.y - 1.0f, currentPos.y + 1.0f), Random.Range(currentPos.z - 1.0f, currentPos.z + 1.0f));
+
+                int randomValue = _random.NextInt(0, 100);
+                Entity selectedPrefab = spawner.spawnerPrefabs[0];
+
+                for (int i = 0; i < spawner.spawnerPrefabs.Length; i++)
+                {
+                    if (spawner.spawnerPrefabChances[i] == 0) continue;
+
+                    if (randomValue <= spawner.spawnerPrefabChances[i])
+                    {
+                        selectedPrefab = spawner.spawnerPrefabs[i];
+                        break;
+                    }
+                }
+                
+                Entity spawnedPrefab = _ecb.Instantiate(index, selectedPrefab);
 
                 _ecb.SetComponent(index, spawnedPrefab, new Translation
                 {
-                    Value = newPos
+                    Value = localToWorld.Position + _random.NextFloat(-1, 1)
                 });
             }
         }
@@ -49,7 +64,7 @@ public class SpawnerSystem : JobComponentSystem
 
     protected override JobHandle OnUpdate(JobHandle inputDeps)
     {
-        SpawnerJob job = new SpawnerJob(UnityEngine.Time.deltaTime, _bsecbs.CreateCommandBuffer().ToConcurrent());
+        SpawnerJob job = new SpawnerJob(UnityEngine.Time.deltaTime, _bsecbs.CreateCommandBuffer().ToConcurrent(), new Random((uint) UnityEngine.Random.Range(0, int.MaxValue)));
 
         JobHandle jobHandle = job.Schedule(this, inputDeps);
         _bsecbs.AddJobHandleForProducer(jobHandle);

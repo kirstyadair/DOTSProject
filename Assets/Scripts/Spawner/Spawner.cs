@@ -3,7 +3,8 @@ using UnityEngine;
 
 public struct Spawner : IComponentData
 {
-    public Entity spawnerPrefab;
+    public Entity[] spawnerPrefabs;
+    public int[] spawnerPrefabChances;
     public float timeBetweenSpawns;
     public float timeToNextSpawn;
     public int numToSpawn;

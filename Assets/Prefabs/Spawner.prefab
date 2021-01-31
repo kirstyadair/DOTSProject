@@ -57,7 +57,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 227698e6ac351cd4297b449c347c02e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnerPrefab: {fileID: 8291793981094087296, guid: 403d9c501ba320b4ca8c56eabececc25,
-    type: 3}
+  _spawnerPrefabs:
+  - prefab: {fileID: 8291793981094087296, guid: 403d9c501ba320b4ca8c56eabececc25,
+      type: 3}
+    maxIntToSpawn: 0
+  - prefab: {fileID: 5009073713475528367, guid: 53fba38dd1898104c8213112c322b3d4,
+      type: 3}
+    maxIntToSpawn: 0
+  - prefab: {fileID: 5627621734788814974, guid: d34216b8486776441b409ba63fde0897,
+      type: 3}
+    maxIntToSpawn: 0
+  - prefab: {fileID: 7914442346970833346, guid: ac7560293433aa24eb1ba23881e50676,
+      type: 3}
+    maxIntToSpawn: 0
+  - prefab: {fileID: 7018673009387005505, guid: f3ecad643c0134841b8eef995ea3a22b,
+      type: 3}
+    maxIntToSpawn: 0
+  - prefab: {fileID: 7823180222976630894, guid: 8ce4a47ab473caf479f5507f5e77435b,
+      type: 3}
+    maxIntToSpawn: 0
+  - prefab: {fileID: 409751651803452769, guid: 5e3dcb6ab80a229488475dfea3e929e8, type: 3}
+    maxIntToSpawn: 0
+  - prefab: {fileID: 1129545107322559546, guid: 34299bae471c94f458aa35f2efde7a89,
+      type: 3}
+    maxIntToSpawn: 0
   _spawnRate: 2
-  _numToSpawn: 10
+  _numToSpawn: 16

@@ -215,6 +215,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4747298349888521511, guid: 4d37373139179e846b85e995bf32978d,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 49.334385
+      objectReference: {fileID: 0}
     - target: {fileID: 7712814288583079002, guid: 4d37373139179e846b85e995bf32978d,
         type: 3}
       propertyPath: m_Name
@@ -324,7 +329,7 @@ PrefabInstance:
     - target: {fileID: 669669373410025469, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.91
+      value: 12.46
       objectReference: {fileID: 0}
     - target: {fileID: 669669373410025469, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
         type: 3}
@@ -370,6 +375,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609904552869963904, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
+        type: 3}
+      propertyPath: _spawnRate
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609904552869963904, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
+        type: 3}
+      propertyPath: _spawnerPrefabs.Array.data[0].maxIntToSpawn
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609904552869963904, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
+        type: 3}
+      propertyPath: _spawnerPrefabs.Array.data[3].maxIntToSpawn
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609904552869963904, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
+        type: 3}
+      propertyPath: _spawnerPrefabs.Array.data[4].maxIntToSpawn
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609904552869963904, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
+        type: 3}
+      propertyPath: _spawnerPrefabs.Array.data[5].maxIntToSpawn
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609904552869963904, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
+        type: 3}
+      propertyPath: _spawnerPrefabs.Array.data[6].maxIntToSpawn
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4097958711340152927, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
         type: 3}
@@ -440,6 +475,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4747298349888521511, guid: 4d37373139179e846b85e995bf32978d,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 49.334385
+      objectReference: {fileID: 0}
     - target: {fileID: 7712814288583079002, guid: 4d37373139179e846b85e995bf32978d,
         type: 3}
       propertyPath: m_Name
@@ -468,7 +508,7 @@ PrefabInstance:
     - target: {fileID: 669669373410025469, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.91
+      value: 17.38
       objectReference: {fileID: 0}
     - target: {fileID: 669669373410025469, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
         type: 3}
@@ -514,6 +554,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609904552869963904, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
+        type: 3}
+      propertyPath: _spawnRate
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609904552869963904, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
+        type: 3}
+      propertyPath: _spawnerPrefabs.Array.data[0].maxIntToSpawn
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609904552869963904, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
+        type: 3}
+      propertyPath: _spawnerPrefabs.Array.data[3].maxIntToSpawn
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609904552869963904, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
+        type: 3}
+      propertyPath: _spawnerPrefabs.Array.data[4].maxIntToSpawn
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609904552869963904, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
+        type: 3}
+      propertyPath: _spawnerPrefabs.Array.data[5].maxIntToSpawn
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609904552869963904, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
+        type: 3}
+      propertyPath: _spawnerPrefabs.Array.data[6].maxIntToSpawn
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4097958711340152927, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
         type: 3}
@@ -629,7 +699,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 3.0092666e-36, y: 1.009742e-28, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -662,7 +732,7 @@ PrefabInstance:
     - target: {fileID: 669669373410025469, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.91
+      value: 12.46
       objectReference: {fileID: 0}
     - target: {fileID: 669669373410025469, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
         type: 3}
@@ -708,6 +778,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609904552869963904, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
+        type: 3}
+      propertyPath: _spawnRate
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609904552869963904, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
+        type: 3}
+      propertyPath: _spawnerPrefabs.Array.data[0].maxIntToSpawn
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609904552869963904, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
+        type: 3}
+      propertyPath: _spawnerPrefabs.Array.data[3].maxIntToSpawn
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609904552869963904, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
+        type: 3}
+      propertyPath: _spawnerPrefabs.Array.data[4].maxIntToSpawn
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609904552869963904, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
+        type: 3}
+      propertyPath: _spawnerPrefabs.Array.data[5].maxIntToSpawn
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609904552869963904, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
+        type: 3}
+      propertyPath: _spawnerPrefabs.Array.data[6].maxIntToSpawn
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4097958711340152927, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
         type: 3}
@@ -849,7 +949,7 @@ PrefabInstance:
     - target: {fileID: 669669373410025469, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.91
+      value: 17.38
       objectReference: {fileID: 0}
     - target: {fileID: 669669373410025469, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
         type: 3}
@@ -895,6 +995,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609904552869963904, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
+        type: 3}
+      propertyPath: _spawnRate
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609904552869963904, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
+        type: 3}
+      propertyPath: _spawnerPrefabs.Array.data[0].maxIntToSpawn
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609904552869963904, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
+        type: 3}
+      propertyPath: _spawnerPrefabs.Array.data[3].maxIntToSpawn
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609904552869963904, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
+        type: 3}
+      propertyPath: _spawnerPrefabs.Array.data[4].maxIntToSpawn
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609904552869963904, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
+        type: 3}
+      propertyPath: _spawnerPrefabs.Array.data[5].maxIntToSpawn
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609904552869963904, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
+        type: 3}
+      propertyPath: _spawnerPrefabs.Array.data[6].maxIntToSpawn
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4097958711340152927, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
         type: 3}
@@ -981,7 +1111,7 @@ PrefabInstance:
     - target: {fileID: 669669373410025469, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.91
+      value: 17.38
       objectReference: {fileID: 0}
     - target: {fileID: 669669373410025469, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
         type: 3}
@@ -1027,6 +1157,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609904552869963904, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
+        type: 3}
+      propertyPath: _spawnRate
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609904552869963904, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
+        type: 3}
+      propertyPath: _spawnerPrefabs.Array.data[0].maxIntToSpawn
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609904552869963904, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
+        type: 3}
+      propertyPath: _spawnerPrefabs.Array.data[3].maxIntToSpawn
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609904552869963904, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
+        type: 3}
+      propertyPath: _spawnerPrefabs.Array.data[4].maxIntToSpawn
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609904552869963904, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
+        type: 3}
+      propertyPath: _spawnerPrefabs.Array.data[5].maxIntToSpawn
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609904552869963904, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
+        type: 3}
+      propertyPath: _spawnerPrefabs.Array.data[6].maxIntToSpawn
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4097958711340152927, guid: 8366ddf2e0ad2fa42b6721ab5ff3e67d,
         type: 3}
