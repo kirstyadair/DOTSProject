@@ -10,6 +10,9 @@ public class SpawnerAuthoringComponent : MonoBehaviour, IDeclareReferencedPrefab
     
     [SerializeField] 
     private float _spawnRate;
+
+    [SerializeField] 
+    private int _numToSpawn;
     
     public void DeclareReferencedPrefabs(List<GameObject> referencedPrefabs)
     {
@@ -22,7 +25,9 @@ public class SpawnerAuthoringComponent : MonoBehaviour, IDeclareReferencedPrefab
         {
             spawnerPrefab = conversionSystem.GetPrimaryEntity(_spawnerPrefab),
             timeBetweenSpawns = 1 / _spawnRate,
-            timeToNextSpawn = 0
+            timeToNextSpawn = 0,
+            numToSpawn = _numToSpawn,
+            numAlreadySpawned = 0
         });
     }
 }

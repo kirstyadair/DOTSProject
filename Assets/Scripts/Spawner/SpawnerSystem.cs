@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using Unity.Entities;
 using Unity.Jobs;
+using Unity.Mathematics;
 using Unity.Transforms;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class SpawnerSystem : JobComponentSystem
 {
@@ -22,32 +24,35 @@ public class SpawnerSystem : JobComponentSystem
         {
             spawner.timeToNextSpawn -= _deltaTime;
 
-            if (spawner.timeToNextSpawn < 0)
+            if (spawner.timeToNextSpawn < 0 && spawner.numAlreadySpawned < spawner.numToSpawn)
             {
+                spawner.numAlreadySpawned++;
                 spawner.timeToNextSpawn = spawner.timeBetweenSpawns;
                 Entity spawnedPrefab = _ecb.Instantiate(index, spawner.spawnerPrefab);
+                float3 currentPos = localToWorld.Position;
+                float3 newPos = new float3(Random.Range(currentPos.x - 1.0f, currentPos.x + 1.0f), Random.Range(currentPos.y - 1.0f, currentPos.y + 1.0f), Random.Range(currentPos.z - 1.0f, currentPos.z + 1.0f));
 
                 _ecb.SetComponent(index, spawnedPrefab, new Translation
                 {
-                    Value = localToWorld.Position
+                    Value = newPos
                 });
             }
         }
     }
     
-    private EndSimulationEntityCommandBufferSystem _esecbs;
+    private BeginSimulationEntityCommandBufferSystem _bsecbs;
 
     protected override void OnCreate()
     {
-        _esecbs = World.GetOrCreateSystem<EndSimulationEntityCommandBufferSystem>();
+        _bsecbs = World.GetOrCreateSystem<BeginSimulationEntityCommandBufferSystem>();
     }
 
     protected override JobHandle OnUpdate(JobHandle inputDeps)
     {
-        SpawnerJob job = new SpawnerJob(UnityEngine.Time.deltaTime, _esecbs.CreateCommandBuffer().ToConcurrent());
+        SpawnerJob job = new SpawnerJob(UnityEngine.Time.deltaTime, _bsecbs.CreateCommandBuffer().ToConcurrent());
 
         JobHandle jobHandle = job.Schedule(this, inputDeps);
-        _esecbs.AddJobHandleForProducer(jobHandle);
+        _bsecbs.AddJobHandleForProducer(jobHandle);
 
         return jobHandle;
     }

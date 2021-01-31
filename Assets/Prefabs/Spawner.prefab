@@ -59,4 +59,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawnerPrefab: {fileID: 8291793981094087296, guid: 403d9c501ba320b4ca8c56eabececc25,
     type: 3}
-  _spawnRate: 3
+  _spawnRate: 2
+  _numToSpawn: 10
