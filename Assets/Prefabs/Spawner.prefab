@@ -60,7 +60,7 @@ MonoBehaviour:
   _spawnerPrefabs:
   - prefab: {fileID: 8291793981094087296, guid: 403d9c501ba320b4ca8c56eabececc25,
       type: 3}
-    maxIntToSpawn: 0
+    maxIntToSpawn: 100
   - prefab: {fileID: 5009073713475528367, guid: 53fba38dd1898104c8213112c322b3d4,
       type: 3}
     maxIntToSpawn: 0
@@ -68,6 +68,9 @@ MonoBehaviour:
       type: 3}
     maxIntToSpawn: 0
   - prefab: {fileID: 7914442346970833346, guid: ac7560293433aa24eb1ba23881e50676,
+      type: 3}
+    maxIntToSpawn: 0
+  - prefab: {fileID: 1129545107322559546, guid: 34299bae471c94f458aa35f2efde7a89,
       type: 3}
     maxIntToSpawn: 0
   - prefab: {fileID: 7018673009387005505, guid: f3ecad643c0134841b8eef995ea3a22b,
@@ -78,8 +81,5 @@ MonoBehaviour:
     maxIntToSpawn: 0
   - prefab: {fileID: 409751651803452769, guid: 5e3dcb6ab80a229488475dfea3e929e8, type: 3}
     maxIntToSpawn: 0
-  - prefab: {fileID: 1129545107322559546, guid: 34299bae471c94f458aa35f2efde7a89,
-      type: 3}
-    maxIntToSpawn: 0
-  _spawnRate: 2
+  _spawnRate: 1
   _numToSpawn: 16

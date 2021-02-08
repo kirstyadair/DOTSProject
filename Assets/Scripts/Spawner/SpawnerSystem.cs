@@ -32,15 +32,35 @@ public class SpawnerSystem : JobComponentSystem
                 spawner.timeToNextSpawn = spawner.timeBetweenSpawns;
 
                 int randomValue = _random.NextInt(0, 100);
-                Entity selectedPrefab = spawner.spawnerPrefabs[0];
+                List<Entity> allPrefabs = new List<Entity>();
+                allPrefabs.Add(spawner.redSpawnerPrefab);
+                allPrefabs.Add(spawner.blueSpawnerPrefab);
+                allPrefabs.Add(spawner.greenSpawnerPrefab);
+                allPrefabs.Add(spawner.orangeSpawnerPrefab);
+                allPrefabs.Add(spawner.yellowSpawnerPrefab);
+                allPrefabs.Add(spawner.pinkSpawnerPrefab);
+                allPrefabs.Add(spawner.purpleSpawnerPrefab);
+                allPrefabs.Add(spawner.cyanSpawnerPrefab);
+                
+                List<int> allChances = new List<int>();
+                allChances.Add(spawner.redSpawnerPrefabChances);
+                allChances.Add(spawner.blueSpawnerPrefabChances);
+                allChances.Add(spawner.greenSpawnerPrefabChances);
+                allChances.Add(spawner.orangeSpawnerPrefabChances);
+                allChances.Add(spawner.yellowSpawnerPrefabChances);
+                allChances.Add(spawner.pinkSpawnerPrefabChances);
+                allChances.Add(spawner.purpleSpawnerPrefabChances);
+                allChances.Add(spawner.cyanSpawnerPrefabChances);
+                
+                Entity selectedPrefab = allPrefabs[0];
 
-                for (int i = 0; i < spawner.spawnerPrefabs.Length; i++)
+                for (int i = 0; i < allPrefabs.Count; i++)
                 {
-                    if (spawner.spawnerPrefabChances[i] == 0) continue;
+                    if (allChances[i] == 0) continue;
 
-                    if (randomValue <= spawner.spawnerPrefabChances[i])
+                    if (randomValue <= allChances[i])
                     {
-                        selectedPrefab = spawner.spawnerPrefabs[i];
+                        selectedPrefab = allPrefabs[i];
                         break;
                     }
                 }
