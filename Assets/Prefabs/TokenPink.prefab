@@ -9,6 +9,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2719928942237838269, guid: 403d9c501ba320b4ca8c56eabececc25,
         type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2719928942237838269, guid: 403d9c501ba320b4ca8c56eabececc25,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -24,6 +29,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2719928942237838269, guid: 403d9c501ba320b4ca8c56eabececc25,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2719928942237838269, guid: 403d9c501ba320b4ca8c56eabececc25,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -35,16 +45,6 @@ PrefabInstance:
     - target: {fileID: 2719928942237838269, guid: 403d9c501ba320b4ca8c56eabececc25,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2719928942237838269, guid: 403d9c501ba320b4ca8c56eabececc25,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2719928942237838269, guid: 403d9c501ba320b4ca8c56eabececc25,
-        type: 3}
-      propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2719928942237838269, guid: 403d9c501ba320b4ca8c56eabececc25,
@@ -67,6 +67,26 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8a07678da5537ff4fbb87259825874e0, type: 2}
+    - target: {fileID: 8136399323138101292, guid: 403d9c501ba320b4ca8c56eabececc25,
+        type: 3}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136399323138101292, guid: 403d9c501ba320b4ca8c56eabececc25,
+        type: 3}
+      propertyPath: m_GravityFactor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136399323138101292, guid: 403d9c501ba320b4ca8c56eabececc25,
+        type: 3}
+      propertyPath: m_LinearDamping
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136399323138101292, guid: 403d9c501ba320b4ca8c56eabececc25,
+        type: 3}
+      propertyPath: m_AngularDamping
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 8291793981094087296, guid: 403d9c501ba320b4ca8c56eabececc25,
         type: 3}
       propertyPath: m_Name

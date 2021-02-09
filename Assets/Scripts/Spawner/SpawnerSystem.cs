@@ -66,10 +66,12 @@ public class SpawnerSystem : JobComponentSystem
                 }
                 
                 Entity spawnedPrefab = _ecb.Instantiate(index, selectedPrefab);
+                float3 newPos = new float3(localToWorld.Position.x + _random.NextFloat(-1, 1),
+                    localToWorld.Position.y + _random.NextFloat(-1, 1), localToWorld.Position.z);
 
                 _ecb.SetComponent(index, spawnedPrefab, new Translation
                 {
-                    Value = localToWorld.Position + _random.NextFloat(-1, 1)
+                    Value = newPos
                 });
             }
         }
