@@ -13,9 +13,9 @@ public class SpawnerSystem : JobComponentSystem
     {
         private float _deltaTime;
         private Random _random;
-        private EntityCommandBuffer.Concurrent _ecb;
+        private EntityCommandBuffer.ParallelWriter _ecb;
         
-        public SpawnerJob(float deltaTime, EntityCommandBuffer.Concurrent ecb, Random random)
+        public SpawnerJob(float deltaTime, EntityCommandBuffer.ParallelWriter ecb, Random random)
         {
             _ecb = ecb;
             _deltaTime = deltaTime;
@@ -84,7 +84,7 @@ public class SpawnerSystem : JobComponentSystem
 
     protected override JobHandle OnUpdate(JobHandle inputDeps)
     {
-        SpawnerJob job = new SpawnerJob(UnityEngine.Time.deltaTime, _bsecbs.CreateCommandBuffer().ToConcurrent(), new Random((uint) UnityEngine.Random.Range(0, int.MaxValue)));
+        SpawnerJob job = new SpawnerJob(UnityEngine.Time.deltaTime, _bsecbs.CreateCommandBuffer().AsParallelWriter(), new Random((uint) UnityEngine.Random.Range(0, int.MaxValue)));
 
         JobHandle jobHandle = job.Schedule(this, inputDeps);
         _bsecbs.AddJobHandleForProducer(jobHandle);
