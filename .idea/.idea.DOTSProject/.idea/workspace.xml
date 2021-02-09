@@ -20,15 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac1b4857-15fb-44dd-8c3e-d89b569ae770" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/TokenBlue.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/TokenBlue.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/TokenCyan.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/TokenCyan.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/TokenGreen.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/TokenGreen.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/TokenOrange.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/TokenOrange.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/TokenPink.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/TokenPink.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/TokenPurple.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/TokenPurple.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/TokenRed.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/TokenRed.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/TokenYellow.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/TokenYellow.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Spawner/SpawnerSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Spawner/SpawnerSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DOTSProject/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DOTSProject/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DOTSProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DOTSProject/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +32,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tags/Yellow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -50,6 +44,15 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Spawner/Spawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Spawner/SpawnerAuthoringComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Spawner/SpawnerSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tags/Yelloe.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tags/Yellow.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tags/Purple.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tags/Red.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tags/Pink.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tags/Orange.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tags/Green.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tags/Cyan.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tags/Blue.cs" />
       </list>
     </option>
   </component>
@@ -97,7 +100,7 @@
       <workItem from="1612114058248" duration="2592000" />
       <workItem from="1612117599550" duration="6852000" />
       <workItem from="1612816412905" duration="1259000" />
-      <workItem from="1612901741671" duration="306000" />
+      <workItem from="1612901741671" duration="993000" />
     </task>
     <servers />
   </component>

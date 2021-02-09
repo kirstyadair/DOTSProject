@@ -13,6 +13,16 @@
             <e p="SpawnerAuthoringComponent.cs" t="Include" />
             <e p="SpawnerSystem.cs" t="Include" />
           </e>
+          <e p="Tags" t="Include">
+            <e p="Blue.cs" t="Include" />
+            <e p="Cyan.cs" t="Include" />
+            <e p="Green.cs" t="Include" />
+            <e p="Orange.cs" t="Include" />
+            <e p="Pink.cs" t="Include" />
+            <e p="Purple.cs" t="Include" />
+            <e p="Red.cs" t="Include" />
+            <e p="Yellow.cs" t="Include" />
+          </e>
         </e>
       </e>
       <e p="DOTSProject.sln" t="IncludeFlat" />
