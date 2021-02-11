@@ -3,6 +3,18 @@ using System.Collections.Generic;
 using Unity.Entities;
 using UnityEngine;
 
+public enum TokenColours
+{
+    Red,
+    Blue,
+    Green,
+    Orange,
+    Yellow,
+    Pink,
+    Purple,
+    Cyan
+}
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
@@ -13,6 +25,10 @@ public class GameManager : MonoBehaviour
 
     private Entity tokenEntityPrefab;
     private EntityManager manager;
+
+    public TokenColours colourToMatch;
+    
+    public List<Entity> tokensToMatch = new List<Entity>();
 
     private void Awake()
     {

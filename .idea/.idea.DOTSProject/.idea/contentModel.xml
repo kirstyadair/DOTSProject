@@ -8,6 +8,7 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="GameManager.cs" t="Include" />
+          <e p="InputSystem.cs" t="Include" />
           <e p="Spawner" t="Include">
             <e p="Spawner.cs" t="Include" />
             <e p="SpawnerAuthoringComponent.cs" t="Include" />
@@ -23,6 +24,8 @@
             <e p="Red.cs" t="Include" />
             <e p="Yellow.cs" t="Include" />
           </e>
+          <e p="TokenAuthoringComponent.cs" t="Include" />
+          <e p="TokenSystem.cs" t="Include" />
         </e>
       </e>
       <e p="DOTSProject.sln" t="IncludeFlat" />
