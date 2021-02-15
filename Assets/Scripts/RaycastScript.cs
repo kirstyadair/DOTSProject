@@ -23,9 +23,8 @@ public class RaycastScript : MonoBehaviour
             End = to,
             Filter = new CollisionFilter()
             {
-                BelongsTo = ~0u,
-                CollidesWith = ~0u,
-                GroupIndex = 0
+                BelongsTo = 1,
+                CollidesWith = 1
             }
         };
         
@@ -48,7 +47,7 @@ public class RaycastScript : MonoBehaviour
         {
             UnityEngine.Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            GameManager.Instance.hitToken = Raycast(ray.origin, ray.direction * 100f);
+            GameManager.Instance.hitToken = Raycast(ray.origin, ray.direction * 10000f);
             Debug.Log(GameManager.Instance.hitToken);
         }
     }

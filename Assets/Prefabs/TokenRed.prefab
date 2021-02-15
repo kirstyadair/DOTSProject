@@ -158,7 +158,7 @@ MonoBehaviour:
     z: 1
   m_PrimitiveOrientation:
     Value:
-      x: -0
+      x: 0
       y: 0
       z: 0
     RotationOrder: 4
@@ -206,7 +206,7 @@ MonoBehaviour:
       m_Value: 0
     m_CustomTags:
       m_Override: 0
-      m_Value: 0000000000000000
+      m_Value: 0001000000000000
   m_ConvexRadius_Deprecated: -1
 --- !u!114 &2380540534877862888
 MonoBehaviour:
@@ -234,6 +234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colour: 0
+  beingRemoved: 0
 --- !u!114 &6019591247579499654
 MonoBehaviour:
   m_ObjectHideFlags: 0
