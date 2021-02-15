@@ -27,7 +27,8 @@ public class GameManager : MonoBehaviour
     private EntityManager manager;
 
     public TokenColours colourToMatch;
-    
+
+    public Entity hitToken;
     public List<Entity> tokensToMatch = new List<Entity>();
 
     private void Awake()
