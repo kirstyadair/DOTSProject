@@ -12,7 +12,8 @@ public enum TokenColours
     Yellow,
     Pink,
     Purple,
-    Cyan
+    Cyan,
+    Null
 }
 
 public class GameManager : MonoBehaviour
@@ -26,10 +27,11 @@ public class GameManager : MonoBehaviour
     private Entity tokenEntityPrefab;
     private EntityManager manager;
 
-    public TokenColours colourToMatch;
-
     public Entity hitToken;
+    public TokenColours hitTokenColour;
     public List<Entity> tokensToMatch = new List<Entity>();
+
+    public bool attemptMatch = false;
 
     private void Awake()
     {

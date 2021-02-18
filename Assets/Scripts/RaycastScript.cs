@@ -43,12 +43,19 @@ public class RaycastScript : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
             UnityEngine.Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
             GameManager.Instance.hitToken = Raycast(ray.origin, ray.direction * 10000f);
-            Debug.Log(GameManager.Instance.hitToken);
+            GameManager.Instance.attemptMatch = true;
+            Entity e = GameManager.Instance.hitToken;
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            GameManager.Instance.attemptMatch = false;
+            GameManager.Instance.hitTokenColour = TokenColours.Null;
         }
     }
 }

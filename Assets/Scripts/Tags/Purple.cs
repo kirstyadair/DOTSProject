@@ -6,4 +6,5 @@ using UnityEngine;
 [GenerateAuthoringComponent]
 public struct Purple : IComponentData
 {
+    public List<Entity> touchingMatchingTokens;
 }

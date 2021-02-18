@@ -5,7 +5,7 @@ using Unity.Entities;
 using Unity.Jobs;
 using Unity.Physics;
 
-[AlwaysSynchronizeSystem]
+/*[AlwaysSynchronizeSystem]
 public class InputSystem : JobComponentSystem
 {
     protected override JobHandle OnUpdate(JobHandle inputDeps)
@@ -29,4 +29,4 @@ public class InputSystem : JobComponentSystem
 
         return default;
     }
-}
+}*/
