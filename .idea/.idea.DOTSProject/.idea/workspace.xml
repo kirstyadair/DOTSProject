@@ -22,9 +22,9 @@
     <list default="true" id="ac1b4857-15fb-44dd-8c3e-d89b569ae770" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DOTSProject/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DOTSProject/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DOTSProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DOTSProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/TokenRed.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/TokenRed.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/RaycastScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RaycastScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Spawner/SpawnerSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Spawner/SpawnerSystem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tags/Blue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tags/Blue.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tags/Cyan.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tags/Cyan.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tags/Green.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tags/Green.cs" afterDir="false" />
@@ -33,8 +33,8 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tags/Purple.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tags/Purple.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tags/Red.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tags/Red.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tags/Yellow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tags/Yellow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TokenAuthoringComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TokenAuthoringComponent.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/TokenSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TokenSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TokenTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TokenTrigger.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,21 +60,23 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Spawner/SpawnerAuthoringComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tags/Yelloe.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Token.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Spawner/SpawnerSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/InputSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/RaycastScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TokenAuthoringComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/EntityDynamicBuffer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/EntityBufferElement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tags/Red.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tags/Blue.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TokenSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/RaycastScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Spawner/SpawnerSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TokenTrigger.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tags/Green.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tags/Orange.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tags/Cyan.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tags/Pink.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tags/Purple.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tags/Yellow.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/TokenTrigger.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/TokenSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tags/Cyan.cs" />
       </list>
     </option>
   </component>
@@ -84,6 +86,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34994584" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.30010834" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -98,10 +102,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="8576">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="8576" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -126,7 +130,8 @@
       <workItem from="1613076966454" duration="5728000" />
       <workItem from="1613162079447" duration="599000" />
       <workItem from="1613417774806" duration="5571000" />
-      <workItem from="1613669330707" duration="13215000" />
+      <workItem from="1613669330707" duration="13516000" />
+      <workItem from="1613754041427" duration="8342000" />
     </task>
     <servers />
   </component>
@@ -151,6 +156,70 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state width="1877" height="375" key="GridCell.Tab.0.bottom" timestamp="1613761128250">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1613761128250" />
+    <state width="1877" height="375" key="GridCell.Tab.0.center" timestamp="1613761128250">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1613761128250" />
+    <state width="1877" height="375" key="GridCell.Tab.0.left" timestamp="1613761128250">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1613761128250" />
+    <state width="1877" height="375" key="GridCell.Tab.0.right" timestamp="1613761128250">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1613761128250" />
+    <state width="1877" height="375" key="GridCell.Tab.1.bottom" timestamp="1613761183401">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1613761183401" />
+    <state width="1877" height="375" key="GridCell.Tab.1.center" timestamp="1613761183401">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1613761183401" />
+    <state width="1877" height="375" key="GridCell.Tab.1.left" timestamp="1613761183401">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1613761183401" />
+    <state width="1877" height="375" key="GridCell.Tab.1.right" timestamp="1613761183401">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1613761183401" />
+    <state width="1877" height="375" key="GridCell.Tab.2.bottom" timestamp="1613761128250">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1613761128250" />
+    <state width="1877" height="375" key="GridCell.Tab.2.center" timestamp="1613761128250">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1613761128250" />
+    <state width="1877" height="375" key="GridCell.Tab.2.left" timestamp="1613761128250">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1613761128250" />
+    <state width="1877" height="375" key="GridCell.Tab.2.right" timestamp="1613761128250">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1613761128250" />
+    <state width="1877" height="375" key="GridCell.Tab.3.bottom" timestamp="1613761128251">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.3.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1613761128251" />
+    <state width="1877" height="375" key="GridCell.Tab.3.center" timestamp="1613761128251">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.3.center/0.0.1920.1040@0.0.1920.1040" timestamp="1613761128251" />
+    <state width="1877" height="375" key="GridCell.Tab.3.left" timestamp="1613761128250">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.3.left/0.0.1920.1040@0.0.1920.1040" timestamp="1613761128250" />
+    <state width="1877" height="375" key="GridCell.Tab.3.right" timestamp="1613761128251">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.3.right/0.0.1920.1040@0.0.1920.1040" timestamp="1613761128251" />
     <state x="778" y="236" key="RiderGenerateDialog" timestamp="1613679022628">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

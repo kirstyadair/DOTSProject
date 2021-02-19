@@ -11,6 +11,8 @@ using RaycastHit = Unity.Physics.RaycastHit;
 // From https://www.youtube.com/watch?v=B3SFWm9gkL8
 public class RaycastScript : MonoBehaviour
 {
+    private EntityManager _entityManager;
+    
     private Entity Raycast(float3 from, float3 to)
     {
         BuildPhysicsWorld buildPhysicsWorld =
@@ -39,6 +41,11 @@ public class RaycastScript : MonoBehaviour
         {
             return Entity.Null;
         }
+    }
+
+    private void Start()
+    {
+        _entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
     }
 
     private void Update()

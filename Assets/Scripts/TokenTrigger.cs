@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.Collections;
 using UnityEngine;
 using Unity.Entities;
 using Unity.Jobs;
 using Unity.Physics;
 using Unity.Physics.Systems;
+using CollisionWorld = Unity.U2D.Entities.Physics.CollisionWorld;
 
 [UpdateAfter(typeof(EndFramePhysicsSystem))]
 public class TokenTrigger : JobComponentSystem
 {
-    public struct TokenTriggerJob : ITriggerEventsJob
+    public struct TokenTriggerJob : ICollisionEventsJob
     {
         public ComponentDataFromEntity<Red> red;
         public ComponentDataFromEntity<Blue> blue;
@@ -21,71 +23,83 @@ public class TokenTrigger : JobComponentSystem
         public ComponentDataFromEntity<Purple> purple;
         public ComponentDataFromEntity<Cyan> cyan;
             
-        public void Execute(TriggerEvent triggerEvent)
+        public void Execute(CollisionEvent triggerEvent)
         {
-            
             Entity a = triggerEvent.Entities.EntityA;
             Entity b = triggerEvent.Entities.EntityB;
 
+            if (!_entityManager.HasComponent<EntityBufferElement>(a) || !_entityManager.HasComponent<EntityBufferElement>(b))
+            {
+                return;
+            }
+
+            DynamicBuffer<EntityBufferElement> aBuffer = _entityManager.GetBuffer<EntityBufferElement>(a);
+            DynamicBuffer<EntityBufferElement> bBuffer = _entityManager.GetBuffer<EntityBufferElement>(b);
+
+            aBuffer.Clear();
+            bBuffer.Clear();
+
             if (red.HasComponent(a) && red.HasComponent(b))
             {
-                if (red[b].touchingMatchingTokens.Contains(a) || red[a].touchingMatchingTokens.Contains(b)) return;
-                red[b].touchingMatchingTokens.Add(a);
-                red[a].touchingMatchingTokens.Add(b);
+                if (CheckForExistingEntity(b, aBuffer) || CheckForExistingEntity(a, bBuffer)) return;
+                bBuffer.Add(new EntityBufferElement {Value = a});
+                aBuffer.Add(new EntityBufferElement {Value = b});
             }
             else if (blue.HasComponent(a) && blue.HasComponent(b))
             {
-                if (blue[b].touchingMatchingTokens.Contains(a) || blue[a].touchingMatchingTokens.Contains(b)) return;
-                blue[b].touchingMatchingTokens.Add(a);
-                blue[a].touchingMatchingTokens.Add(b);
+                if (CheckForExistingEntity(b, aBuffer) || CheckForExistingEntity(a, bBuffer)) return;
+                bBuffer.Add(new EntityBufferElement {Value = a});
+                aBuffer.Add(new EntityBufferElement {Value = b});
             }
             else if (green.HasComponent(a) && green.HasComponent(b))
             {
-                if (green[b].touchingMatchingTokens.Contains(a) || green[a].touchingMatchingTokens.Contains(b)) return;
-                green[b].touchingMatchingTokens.Add(a);
-                green[a].touchingMatchingTokens.Add(b);
+                if (CheckForExistingEntity(b, aBuffer) || CheckForExistingEntity(a, bBuffer)) return;
+                bBuffer.Add(new EntityBufferElement {Value = a});
+                aBuffer.Add(new EntityBufferElement {Value = b});
             }
             else if (orange.HasComponent(a) && orange.HasComponent(b))
             {
-                if (orange[b].touchingMatchingTokens.Contains(a) || orange[a].touchingMatchingTokens.Contains(b)) return;
-                orange[b].touchingMatchingTokens.Add(a);
-                orange[a].touchingMatchingTokens.Add(b);
+                if (CheckForExistingEntity(b, aBuffer) || CheckForExistingEntity(a, bBuffer)) return;
+                bBuffer.Add(new EntityBufferElement {Value = a});
+                aBuffer.Add(new EntityBufferElement {Value = b});
             }
             else if (yellow.HasComponent(a) && yellow.HasComponent(b))
             {
-                if (yellow[b].touchingMatchingTokens.Contains(a) || yellow[a].touchingMatchingTokens.Contains(b)) return;
-                yellow[b].touchingMatchingTokens.Add(a);
-                yellow[a].touchingMatchingTokens.Add(b);
+                if (CheckForExistingEntity(b, aBuffer) || CheckForExistingEntity(a, bBuffer)) return;
+                bBuffer.Add(new EntityBufferElement {Value = a});
+                aBuffer.Add(new EntityBufferElement {Value = b});
             }
             else if (pink.HasComponent(a) && pink.HasComponent(b))
             {
-                if (pink[b].touchingMatchingTokens.Contains(a) || pink[a].touchingMatchingTokens.Contains(b)) return;
-                pink[b].touchingMatchingTokens.Add(a);
-                pink[a].touchingMatchingTokens.Add(b);
+                if (CheckForExistingEntity(b, aBuffer) || CheckForExistingEntity(a, bBuffer)) return;
+                bBuffer.Add(new EntityBufferElement {Value = a});
+                aBuffer.Add(new EntityBufferElement {Value = b});
             }
             else if (purple.HasComponent(a) && purple.HasComponent(b))
             {
-                if (purple[b].touchingMatchingTokens.Contains(a) || purple[a].touchingMatchingTokens.Contains(b)) return;
-                purple[b].touchingMatchingTokens.Add(a);
-                purple[a].touchingMatchingTokens.Add(b);
+                if (CheckForExistingEntity(b, aBuffer) || CheckForExistingEntity(a, bBuffer)) return;
+                bBuffer.Add(new EntityBufferElement {Value = a});
+                aBuffer.Add(new EntityBufferElement {Value = b});
             }
             else if (cyan.HasComponent(a) && cyan.HasComponent(b))
             {
-                if (cyan[b].touchingMatchingTokens.Contains(a) || cyan[a].touchingMatchingTokens.Contains(b)) return;
-                cyan[b].touchingMatchingTokens.Add(a);
-                cyan[a].touchingMatchingTokens.Add(b);
+                if (CheckForExistingEntity(b, aBuffer) || CheckForExistingEntity(a, bBuffer)) return;
+                bBuffer.Add(new EntityBufferElement {Value = a});
+                aBuffer.Add(new EntityBufferElement {Value = b});
             }
         }
     }
 
     private BuildPhysicsWorld _buildPhysicsWorld;
     private StepPhysicsWorld _stepPhysicsWorld;
+    private static EntityManager _entityManager;
 
     protected override void OnCreate()
     {
         base.OnCreate();
         _buildPhysicsWorld = World.GetOrCreateSystem<BuildPhysicsWorld>();
         _stepPhysicsWorld = World.GetOrCreateSystem<StepPhysicsWorld>();
+        _entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
     }
 
     protected override JobHandle OnUpdate(JobHandle inputDeps)
@@ -103,6 +117,18 @@ public class TokenTrigger : JobComponentSystem
         JobHandle job = triggerJob.Schedule(_stepPhysicsWorld.Simulation, ref _buildPhysicsWorld.PhysicsWorld, inputDeps);
         job.Complete();
         return job;
+    }
+
+    static private bool CheckForExistingEntity(Entity entity, DynamicBuffer<EntityBufferElement> dynamicBuffer)
+    {
+        bool contains = false;
+
+        for (int i = 0; i < dynamicBuffer.Length; i++)
+        {
+            if (dynamicBuffer[i].Value == entity) contains = true;
+        }
+        
+        return contains;
     }
 }
 

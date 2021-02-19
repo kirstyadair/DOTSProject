@@ -22,11 +22,11 @@ public class TokenSystem : JobComponentSystem
                     {
                         case TokenColours.Red:
                         {
-                            foreach (Entity e in EntityManager.GetComponentData<Red>(entity).touchingMatchingTokens)
+                            foreach (EntityBufferElement e in EntityManager.GetBuffer<EntityBufferElement>(entity))
                             {
-                                if (!tokenAuthoringComponent.beingRemoved && !GameManager.Instance.tokensToMatch.Contains(e))
+                                if (!tokenAuthoringComponent.beingRemoved && !GameManager.Instance.tokensToMatch.Contains(e.Value))
                                 {
-                                    GameManager.Instance.tokensToMatch.Add(e);
+                                    GameManager.Instance.tokensToMatch.Add(e.Value);
                                     tokenAuthoringComponent.beingRemoved = true;
                                 }
                             }
@@ -34,11 +34,11 @@ public class TokenSystem : JobComponentSystem
                         }
                         case TokenColours.Blue:
                         {
-                            foreach (Entity e in EntityManager.GetComponentData<Blue>(entity).touchingMatchingTokens)
+                            foreach (EntityBufferElement e in EntityManager.GetBuffer<EntityBufferElement>(entity))
                             {
-                                if (!tokenAuthoringComponent.beingRemoved && !GameManager.Instance.tokensToMatch.Contains(e))
+                                if (!tokenAuthoringComponent.beingRemoved && !GameManager.Instance.tokensToMatch.Contains(e.Value))
                                 {
-                                    GameManager.Instance.tokensToMatch.Add(e);
+                                    GameManager.Instance.tokensToMatch.Add(e.Value);
                                     tokenAuthoringComponent.beingRemoved = true;
                                 }
                             }
@@ -46,11 +46,11 @@ public class TokenSystem : JobComponentSystem
                         }
                         case TokenColours.Green:
                         {
-                            foreach (Entity e in EntityManager.GetComponentData<Green>(entity).touchingMatchingTokens)
+                            foreach (EntityBufferElement e in EntityManager.GetBuffer<EntityBufferElement>(entity))
                             {
-                                if (!tokenAuthoringComponent.beingRemoved && !GameManager.Instance.tokensToMatch.Contains(e))
+                                if (!tokenAuthoringComponent.beingRemoved && !GameManager.Instance.tokensToMatch.Contains(e.Value))
                                 {
-                                    GameManager.Instance.tokensToMatch.Add(e);
+                                    GameManager.Instance.tokensToMatch.Add(e.Value);
                                     tokenAuthoringComponent.beingRemoved = true;
                                 }
                             }
@@ -58,11 +58,11 @@ public class TokenSystem : JobComponentSystem
                         }
                         case TokenColours.Orange:
                         {
-                            foreach (Entity e in EntityManager.GetComponentData<Orange>(entity).touchingMatchingTokens)
+                            foreach (EntityBufferElement e in EntityManager.GetBuffer<EntityBufferElement>(entity))
                             {
-                                if (!tokenAuthoringComponent.beingRemoved && !GameManager.Instance.tokensToMatch.Contains(e))
+                                if (!tokenAuthoringComponent.beingRemoved && !GameManager.Instance.tokensToMatch.Contains(e.Value))
                                 {
-                                    GameManager.Instance.tokensToMatch.Add(e);
+                                    GameManager.Instance.tokensToMatch.Add(e.Value);
                                     tokenAuthoringComponent.beingRemoved = true;
                                 }
                             }
@@ -70,11 +70,11 @@ public class TokenSystem : JobComponentSystem
                         }
                         case TokenColours.Yellow:
                         {
-                            foreach (Entity e in EntityManager.GetComponentData<Yellow>(entity).touchingMatchingTokens)
+                            foreach (EntityBufferElement e in EntityManager.GetBuffer<EntityBufferElement>(entity))
                             {
-                                if (!tokenAuthoringComponent.beingRemoved && !GameManager.Instance.tokensToMatch.Contains(e))
+                                if (!tokenAuthoringComponent.beingRemoved && !GameManager.Instance.tokensToMatch.Contains(e.Value))
                                 {
-                                    GameManager.Instance.tokensToMatch.Add(e);
+                                    GameManager.Instance.tokensToMatch.Add(e.Value);
                                     tokenAuthoringComponent.beingRemoved = true;
                                 }
                             }
@@ -82,11 +82,11 @@ public class TokenSystem : JobComponentSystem
                         }
                         case TokenColours.Pink:
                         {
-                            foreach (Entity e in EntityManager.GetComponentData<Pink>(entity).touchingMatchingTokens)
+                            foreach (EntityBufferElement e in EntityManager.GetBuffer<EntityBufferElement>(entity))
                             {
-                                if (!tokenAuthoringComponent.beingRemoved && !GameManager.Instance.tokensToMatch.Contains(e))
+                                if (!tokenAuthoringComponent.beingRemoved && !GameManager.Instance.tokensToMatch.Contains(e.Value))
                                 {
-                                    GameManager.Instance.tokensToMatch.Add(e);
+                                    GameManager.Instance.tokensToMatch.Add(e.Value);
                                     tokenAuthoringComponent.beingRemoved = true;
                                 }
                             }
@@ -94,11 +94,11 @@ public class TokenSystem : JobComponentSystem
                         }
                         case TokenColours.Purple:
                         {
-                            foreach (Entity e in EntityManager.GetComponentData<Purple>(entity).touchingMatchingTokens)
+                            foreach (EntityBufferElement e in EntityManager.GetBuffer<EntityBufferElement>(entity))
                             {
-                                if (!tokenAuthoringComponent.beingRemoved && !GameManager.Instance.tokensToMatch.Contains(e))
+                                if (!tokenAuthoringComponent.beingRemoved && !GameManager.Instance.tokensToMatch.Contains(e.Value))
                                 {
-                                    GameManager.Instance.tokensToMatch.Add(e);
+                                    GameManager.Instance.tokensToMatch.Add(e.Value);
                                     tokenAuthoringComponent.beingRemoved = true;
                                 }
                             }
@@ -106,11 +106,11 @@ public class TokenSystem : JobComponentSystem
                         }
                         case TokenColours.Cyan:
                         {
-                            foreach (Entity e in EntityManager.GetComponentData<Cyan>(entity).touchingMatchingTokens)
+                            foreach (EntityBufferElement e in EntityManager.GetBuffer<EntityBufferElement>(entity))
                             {
-                                if (!tokenAuthoringComponent.beingRemoved && !GameManager.Instance.tokensToMatch.Contains(e))
+                                if (!tokenAuthoringComponent.beingRemoved && !GameManager.Instance.tokensToMatch.Contains(e.Value))
                                 {
-                                    GameManager.Instance.tokensToMatch.Add(e);
+                                    GameManager.Instance.tokensToMatch.Add(e.Value);
                                     tokenAuthoringComponent.beingRemoved = true;
                                 }
                             }

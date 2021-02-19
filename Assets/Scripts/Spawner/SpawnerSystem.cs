@@ -66,6 +66,8 @@ public class SpawnerSystem : JobComponentSystem
                 }
                 
                 Entity spawnedPrefab = _ecb.Instantiate(index, selectedPrefab);
+                _ecb.AddBuffer<EntityBufferElement>(index, spawnedPrefab);
+
                 float3 newPos = new float3(localToWorld.Position.x + _random.NextFloat(-1, 1),
                     localToWorld.Position.y + _random.NextFloat(-1, 1), localToWorld.Position.z);
 

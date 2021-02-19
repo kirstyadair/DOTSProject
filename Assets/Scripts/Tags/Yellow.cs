@@ -5,5 +5,4 @@ using Unity.Entities;
 [GenerateAuthoringComponent]
 public struct Yellow : IComponentData
 {
-    public List<Entity> touchingMatchingTokens;
 }
