@@ -5,28 +5,24 @@ using Unity.Entities;
 using Unity.Jobs;
 using Unity.Physics;
 
-/*[AlwaysSynchronizeSystem]
+[AlwaysSynchronizeSystem]
 public class InputSystem : JobComponentSystem
 {
     protected override JobHandle OnUpdate(JobHandle inputDeps)
     {
-        if (Input.GetKey(KeyCode.A))
+        if (GameManager.Instance.refreshDynamicBuffers)
         {
+            GameManager.Instance.refreshDynamicBuffers = false;
+            
             Entities
                 .WithAll<TokenAuthoringComponent>()
                 .WithoutBurst()
-                .ForEach((Entity entity, TokenAuthoringComponent tokenAuthoringComponent) =>
+                .ForEach((Entity entity) =>
                 {
-                    if (tokenAuthoringComponent.colour == GameManager.Instance.colourToMatch && !tokenAuthoringComponent.beingRemoved)
-                    {
-                        GameManager.Instance.tokensToMatch.Add(entity);
-                        tokenAuthoringComponent.beingRemoved = true;
-                    
-                        Debug.Log("Removing " + entity + ", of colour " + tokenAuthoringComponent.colour);
-                    }
+                    EntityManager.GetBuffer<EntityBufferElement>(entity).Clear();
                 }).Run();
         }
 
         return default;
     }
-}*/
+}

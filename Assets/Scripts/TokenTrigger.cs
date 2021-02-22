@@ -36,9 +36,6 @@ public class TokenTrigger : JobComponentSystem
             DynamicBuffer<EntityBufferElement> aBuffer = _entityManager.GetBuffer<EntityBufferElement>(a);
             DynamicBuffer<EntityBufferElement> bBuffer = _entityManager.GetBuffer<EntityBufferElement>(b);
 
-            aBuffer.Clear();
-            bBuffer.Clear();
-
             if (red.HasComponent(a) && red.HasComponent(b))
             {
                 if (CheckForExistingEntity(b, aBuffer) || CheckForExistingEntity(a, bBuffer)) return;
@@ -84,6 +81,7 @@ public class TokenTrigger : JobComponentSystem
             else if (cyan.HasComponent(a) && cyan.HasComponent(b))
             {
                 if (CheckForExistingEntity(b, aBuffer) || CheckForExistingEntity(a, bBuffer)) return;
+
                 bBuffer.Add(new EntityBufferElement {Value = a});
                 aBuffer.Add(new EntityBufferElement {Value = b});
             }

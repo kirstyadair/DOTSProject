@@ -10,127 +10,45 @@ public class TokenSystem : JobComponentSystem
 {
     protected override JobHandle OnUpdate(JobHandle inputDeps)
     {
-        if (GameManager.Instance.attemptMatch)
+        if (GameManager.Instance.attemptMatch && GameManager.Instance.canAttemptNextMatch)
         {
+            GameManager.Instance.canAttemptNextMatch = false;
+            
             Entities
                 .WithAll<TokenAuthoringComponent>()
                 .WithStructuralChanges()
                 .WithoutBurst()
                 .ForEach((Entity entity, TokenAuthoringComponent tokenAuthoringComponent) =>
                 {
-                    switch (tokenAuthoringComponent.colour)
+                    foreach (EntityBufferElement e in EntityManager.GetBuffer<EntityBufferElement>(entity))
                     {
-                        case TokenColours.Red:
+                        if (tokenAuthoringComponent.colour != GameManager.Instance.hitTokenColour) continue;
+                            
+                        if (!GameManager.Instance.tokensToMatch.Contains(e.Value))
                         {
-                            foreach (EntityBufferElement e in EntityManager.GetBuffer<EntityBufferElement>(entity))
-                            {
-                                if (!tokenAuthoringComponent.beingRemoved && !GameManager.Instance.tokensToMatch.Contains(e.Value))
-                                {
-                                    GameManager.Instance.tokensToMatch.Add(e.Value);
-                                    tokenAuthoringComponent.beingRemoved = true;
-                                }
-                            }
-                            break;
+                            //Debug.Log("Colour: " + tokenAuthoringComponent.colour);
+                            GameManager.Instance.tokensToMatch.Add(e.Value);
+                            tokenAuthoringComponent.beingRemoved = true;
                         }
-                        case TokenColours.Blue:
-                        {
-                            foreach (EntityBufferElement e in EntityManager.GetBuffer<EntityBufferElement>(entity))
-                            {
-                                if (!tokenAuthoringComponent.beingRemoved && !GameManager.Instance.tokensToMatch.Contains(e.Value))
-                                {
-                                    GameManager.Instance.tokensToMatch.Add(e.Value);
-                                    tokenAuthoringComponent.beingRemoved = true;
-                                }
-                            }
-                            break;
-                        }
-                        case TokenColours.Green:
-                        {
-                            foreach (EntityBufferElement e in EntityManager.GetBuffer<EntityBufferElement>(entity))
-                            {
-                                if (!tokenAuthoringComponent.beingRemoved && !GameManager.Instance.tokensToMatch.Contains(e.Value))
-                                {
-                                    GameManager.Instance.tokensToMatch.Add(e.Value);
-                                    tokenAuthoringComponent.beingRemoved = true;
-                                }
-                            }
-                            break;
-                        }
-                        case TokenColours.Orange:
-                        {
-                            foreach (EntityBufferElement e in EntityManager.GetBuffer<EntityBufferElement>(entity))
-                            {
-                                if (!tokenAuthoringComponent.beingRemoved && !GameManager.Instance.tokensToMatch.Contains(e.Value))
-                                {
-                                    GameManager.Instance.tokensToMatch.Add(e.Value);
-                                    tokenAuthoringComponent.beingRemoved = true;
-                                }
-                            }
-                            break;
-                        }
-                        case TokenColours.Yellow:
-                        {
-                            foreach (EntityBufferElement e in EntityManager.GetBuffer<EntityBufferElement>(entity))
-                            {
-                                if (!tokenAuthoringComponent.beingRemoved && !GameManager.Instance.tokensToMatch.Contains(e.Value))
-                                {
-                                    GameManager.Instance.tokensToMatch.Add(e.Value);
-                                    tokenAuthoringComponent.beingRemoved = true;
-                                }
-                            }
-                            break;
-                        }
-                        case TokenColours.Pink:
-                        {
-                            foreach (EntityBufferElement e in EntityManager.GetBuffer<EntityBufferElement>(entity))
-                            {
-                                if (!tokenAuthoringComponent.beingRemoved && !GameManager.Instance.tokensToMatch.Contains(e.Value))
-                                {
-                                    GameManager.Instance.tokensToMatch.Add(e.Value);
-                                    tokenAuthoringComponent.beingRemoved = true;
-                                }
-                            }
-                            break;
-                        }
-                        case TokenColours.Purple:
-                        {
-                            foreach (EntityBufferElement e in EntityManager.GetBuffer<EntityBufferElement>(entity))
-                            {
-                                if (!tokenAuthoringComponent.beingRemoved && !GameManager.Instance.tokensToMatch.Contains(e.Value))
-                                {
-                                    GameManager.Instance.tokensToMatch.Add(e.Value);
-                                    tokenAuthoringComponent.beingRemoved = true;
-                                }
-                            }
-                            break;
-                        }
-                        case TokenColours.Cyan:
-                        {
-                            foreach (EntityBufferElement e in EntityManager.GetBuffer<EntityBufferElement>(entity))
-                            {
-                                if (!tokenAuthoringComponent.beingRemoved && !GameManager.Instance.tokensToMatch.Contains(e.Value))
-                                {
-                                    GameManager.Instance.tokensToMatch.Add(e.Value);
-                                    tokenAuthoringComponent.beingRemoved = true;
-                                }
-                            }
-                            break;
-                        }
-                        default:
-                        {
-                            break;
-                        }
-                    }
-
-                    foreach (Entity e in GameManager.Instance.tokensToMatch)
-                    {
-                        if (e != Entity.Null)
-                        {
-                            EntityManager.DestroyEntity(e);
-                        }
-                       
                     }
                 }).Run();
+        }
+        else
+        {
+            if (GameManager.Instance.tokensToMatch.Count > 0)
+            {
+                Debug.Log(GameManager.Instance.tokensToMatch.Count);
+                
+                foreach (Entity e in GameManager.Instance.tokensToMatch)
+                {
+                    if (e != Entity.Null)
+                    {
+                        EntityManager.DestroyEntity(e);
+                    }
+                }
+
+                GameManager.Instance.tokensToMatch.Clear();
+            }
         }
 
         return default;

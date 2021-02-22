@@ -12,6 +12,8 @@ using RaycastHit = Unity.Physics.RaycastHit;
 public class RaycastScript : MonoBehaviour
 {
     private EntityManager _entityManager;
+    private float _timeBetweenRefreshingTokens = 0.5f;
+    private float _timeToNextRefresh = 0;
     
     private Entity Raycast(float3 from, float3 to)
     {
@@ -50,18 +52,37 @@ public class RaycastScript : MonoBehaviour
 
     private void Update()
     {
+        _timeToNextRefresh -= Time.deltaTime;
+        GameManager.Instance.refreshDynamicBuffers = false;
+        
+        if (_timeToNextRefresh <= 0)
+        {
+            _timeToNextRefresh = _timeBetweenRefreshingTokens;
+            GameManager.Instance.refreshDynamicBuffers = true;
+        }
+        
         if (Input.GetMouseButtonDown(0))
         {
             UnityEngine.Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
             GameManager.Instance.hitToken = Raycast(ray.origin, ray.direction * 10000f);
+
+            GameManager.Instance.hitTokenColour = _entityManager.GetComponentData<TokenAuthoringComponent>(GameManager.Instance.hitToken).colour;
+
+            foreach (var touchingToken in _entityManager.GetBuffer<EntityBufferElement>(GameManager.Instance.hitToken))
+            {
+                Debug.Log(_entityManager.GetComponentData<TokenAuthoringComponent>(touchingToken.Value).colour);
+            }
+            
             GameManager.Instance.attemptMatch = true;
+            GameManager.Instance.canAttemptNextMatch = true;
             Entity e = GameManager.Instance.hitToken;
         }
 
         if (Input.GetMouseButtonUp(0))
         {
             GameManager.Instance.attemptMatch = false;
+            GameManager.Instance.canAttemptNextMatch = false;
             GameManager.Instance.hitTokenColour = TokenColours.Null;
         }
     }

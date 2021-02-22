@@ -32,6 +32,9 @@ public class GameManager : MonoBehaviour
     public List<Entity> tokensToMatch = new List<Entity>();
 
     public bool attemptMatch = false;
+    public bool canAttemptNextMatch = true;
+
+    public bool refreshDynamicBuffers = false;
 
     private void Awake()
     {
