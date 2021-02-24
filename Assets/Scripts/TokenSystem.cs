@@ -72,6 +72,8 @@ public class TokenSystem : JobComponentSystem
         {
             if (GameManager.Instance.tokensToMatch.Count > 1)
             {
+                GameManager.Instance.AddToSpawners(GameManager.Instance.tokensToMatch.Count);
+                
                 foreach (Entity e in GameManager.Instance.tokensToMatch)
                 {
                     if (e != Entity.Null)

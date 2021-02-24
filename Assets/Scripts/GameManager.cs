@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
     private Entity tokenEntityPrefab;
     private EntityManager manager;
 
+    public GameObject spawner;
+    public Vector3[] spawnerTransforms;
     public Entity hitToken;
     public TokenColours hitTokenColour;
     public List<Entity> tokensToMatch = new List<Entity>();
@@ -46,6 +48,15 @@ public class GameManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+        }
+    }
+
+    public void AddToSpawners(int numToSpawn)
+    {
+        for (int i = 0; i < spawnerTransforms.Length; i++)
+        {
+            GameObject spawnedSpawner = Instantiate(spawner, spawnerTransforms[i], Quaternion.identity);
+            spawner.GetComponent<SpawnerAuthoringComponent>()._numToSpawn = numToSpawn/spawnerTransforms.Length + 1;
         }
     }
 

@@ -16,13 +16,13 @@ public struct Token
 public class SpawnerAuthoringComponent : MonoBehaviour, IDeclareReferencedPrefabs, IConvertGameObjectToEntity
 {
     [SerializeField] 
-    private Token[] _spawnerPrefabs;
+    public Token[] _spawnerPrefabs;
     
     [SerializeField] 
-    private float _spawnRate;
+    public float _spawnRate;
 
     [SerializeField] 
-    private int _numToSpawn;
+    public int _numToSpawn;
     
     public void DeclareReferencedPrefabs(List<GameObject> referencedPrefabs)
     {
