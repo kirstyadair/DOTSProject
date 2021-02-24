@@ -63,15 +63,14 @@ public class RaycastScript : MonoBehaviour
         
         if (Input.GetMouseButtonDown(0))
         {
+            GameManager.Instance.tokenDistances.Clear();
             UnityEngine.Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
             GameManager.Instance.hitToken = Raycast(ray.origin, ray.direction * 10000f);
 
-            GameManager.Instance.hitTokenColour = _entityManager.GetComponentData<TokenAuthoringComponent>(GameManager.Instance.hitToken).colour;
-
-            foreach (var touchingToken in _entityManager.GetBuffer<EntityBufferElement>(GameManager.Instance.hitToken))
+            if (GameManager.Instance.hitToken != null)
             {
-                Debug.Log(_entityManager.GetComponentData<TokenAuthoringComponent>(touchingToken.Value).colour);
+                GameManager.Instance.hitTokenColour = _entityManager.GetComponentData<TokenAuthoringComponent>(GameManager.Instance.hitToken).colour;
             }
             
             GameManager.Instance.attemptMatch = true;

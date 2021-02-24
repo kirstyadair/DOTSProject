@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     public Entity hitToken;
     public TokenColours hitTokenColour;
     public List<Entity> tokensToMatch = new List<Entity>();
+    public List<float> tokenDistances = new List<float>();
 
     public bool attemptMatch = false;
     public bool canAttemptNextMatch = true;

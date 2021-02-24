@@ -1,8 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections;
 using Unity.Entities;
 using Unity.Jobs;
+using Unity.Mathematics;
 using Unity.Physics;
+using Unity.Transforms;
 using UnityEngine;
 
 [AlwaysSynchronizeSystem]
@@ -18,27 +21,57 @@ public class TokenSystem : JobComponentSystem
                 .WithAll<TokenAuthoringComponent>()
                 .WithStructuralChanges()
                 .WithoutBurst()
-                .ForEach((Entity entity, TokenAuthoringComponent tokenAuthoringComponent) =>
+                .ForEach((Entity entity, TokenAuthoringComponent tokenAuthoringComponent, LocalToWorld position) =>
                 {
-                    foreach (EntityBufferElement e in EntityManager.GetBuffer<EntityBufferElement>(entity))
+                    if (entity == GameManager.Instance.hitToken)
                     {
-                        if (tokenAuthoringComponent.colour != GameManager.Instance.hitTokenColour) continue;
-                            
-                        if (!GameManager.Instance.tokensToMatch.Contains(e.Value))
+                        GameManager.Instance.tokensToMatch.Add(GameManager.Instance.hitToken);
+                        
+                        foreach (EntityBufferElement e in EntityManager.GetBuffer<EntityBufferElement>(entity))
                         {
-                            //Debug.Log("Colour: " + tokenAuthoringComponent.colour);
-                            GameManager.Instance.tokensToMatch.Add(e.Value);
-                            tokenAuthoringComponent.beingRemoved = true;
+                            if (tokenAuthoringComponent.colour != GameManager.Instance.hitTokenColour) continue;
+                            
+                            if (!GameManager.Instance.tokensToMatch.Contains(e.Value))
+                            {
+                                GameManager.Instance.tokensToMatch.Add(e.Value);
+                                tokenAuthoringComponent.beingRemoved = true;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        bool ignoreThisEntity = true;
+                        
+                        foreach (EntityBufferElement e in EntityManager.GetBuffer<EntityBufferElement>(entity))
+                        {
+                            if (tokenAuthoringComponent.colour != GameManager.Instance.hitTokenColour) continue;
+                            
+                            if (GameManager.Instance.tokensToMatch.Contains(e.Value))
+                            {
+                                ignoreThisEntity = false;
+                            }
+                        }
+
+                        if (!ignoreThisEntity)
+                        {
+                            foreach (EntityBufferElement e in EntityManager.GetBuffer<EntityBufferElement>(entity))
+                            {
+                                if (tokenAuthoringComponent.colour != GameManager.Instance.hitTokenColour) continue;
+                            
+                                if (!GameManager.Instance.tokensToMatch.Contains(e.Value))
+                                {
+                                    GameManager.Instance.tokensToMatch.Add(e.Value);
+                                    tokenAuthoringComponent.beingRemoved = true;
+                                }
+                            }
                         }
                     }
                 }).Run();
         }
         else
         {
-            if (GameManager.Instance.tokensToMatch.Count > 0)
+            if (GameManager.Instance.tokensToMatch.Count > 1)
             {
-                Debug.Log(GameManager.Instance.tokensToMatch.Count);
-                
                 foreach (Entity e in GameManager.Instance.tokensToMatch)
                 {
                     if (e != Entity.Null)
@@ -47,8 +80,9 @@ public class TokenSystem : JobComponentSystem
                     }
                 }
 
-                GameManager.Instance.tokensToMatch.Clear();
             }
+            
+            GameManager.Instance.tokensToMatch.Clear();
         }
 
         return default;

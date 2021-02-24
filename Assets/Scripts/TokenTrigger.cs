@@ -7,6 +7,7 @@ using Unity.Entities;
 using Unity.Jobs;
 using Unity.Physics;
 using Unity.Physics.Systems;
+using Unity.Transforms;
 using CollisionWorld = Unity.U2D.Entities.Physics.CollisionWorld;
 
 [UpdateAfter(typeof(EndFramePhysicsSystem))]
