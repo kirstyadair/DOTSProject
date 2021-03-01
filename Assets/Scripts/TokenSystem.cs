@@ -72,12 +72,20 @@ public class TokenSystem : JobComponentSystem
         {
             if (GameManager.Instance.tokensToMatch.Count > 1)
             {
+                bool objective = false;
+                if (EntityManager.GetComponentData<TokenAuthoringComponent>(GameManager.Instance.tokensToMatch[0])
+                    .colour == GameManager.Instance.objectiveColour)
+                {
+                    objective = true;
+                }
+                
                 GameManager.Instance.AddToSpawners(GameManager.Instance.tokensToMatch.Count);
                 
                 foreach (Entity e in GameManager.Instance.tokensToMatch)
                 {
                     if (e != Entity.Null)
                     {
+                        if (objective) GameManager.Instance.objectiveAmount--;
                         EntityManager.DestroyEntity(e);
                     }
                 }

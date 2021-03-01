@@ -12,6 +12,7 @@ using RaycastHit = Unity.Physics.RaycastHit;
 public class RaycastScript : MonoBehaviour
 {
     private EntityManager _entityManager;
+    private GameManager _gameManager;
     private float _timeBetweenRefreshingTokens = 0.5f;
     private float _timeToNextRefresh = 0;
     
@@ -48,41 +49,45 @@ public class RaycastScript : MonoBehaviour
     private void Start()
     {
         _entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
+        _gameManager = GameManager.Instance;
     }
 
     private void Update()
     {
         _timeToNextRefresh -= Time.deltaTime;
-        GameManager.Instance.refreshDynamicBuffers = false;
+        _gameManager.refreshDynamicBuffers = false;
         
         if (_timeToNextRefresh <= 0)
         {
             _timeToNextRefresh = _timeBetweenRefreshingTokens;
-            GameManager.Instance.refreshDynamicBuffers = true;
+            _gameManager.refreshDynamicBuffers = true;
         }
         
         if (Input.GetMouseButtonDown(0))
         {
-            GameManager.Instance.tokenDistances.Clear();
+            if (_gameManager.movesAllowed <= 0) return;
+            
+            _gameManager.tokenDistances.Clear();
+            _gameManager.movesAllowed--;
             UnityEngine.Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            GameManager.Instance.hitToken = Raycast(ray.origin, ray.direction * 10000f);
+            _gameManager.hitToken = Raycast(ray.origin, ray.direction * 10000f);
 
-            if (GameManager.Instance.hitToken != null)
+            if (_gameManager.hitToken != null)
             {
-                GameManager.Instance.hitTokenColour = _entityManager.GetComponentData<TokenAuthoringComponent>(GameManager.Instance.hitToken).colour;
+                _gameManager.hitTokenColour = _entityManager.GetComponentData<TokenAuthoringComponent>(_gameManager.hitToken).colour;
             }
             
-            GameManager.Instance.attemptMatch = true;
-            GameManager.Instance.canAttemptNextMatch = true;
-            Entity e = GameManager.Instance.hitToken;
+            _gameManager.attemptMatch = true;
+            _gameManager.canAttemptNextMatch = true;
+            Entity e = _gameManager.hitToken;
         }
 
         if (Input.GetMouseButtonUp(0))
         {
-            GameManager.Instance.attemptMatch = false;
-            GameManager.Instance.canAttemptNextMatch = false;
-            GameManager.Instance.hitTokenColour = TokenColours.Null;
+            _gameManager.attemptMatch = false;
+            _gameManager.canAttemptNextMatch = false;
+            _gameManager.hitTokenColour = TokenColours.Null;
         }
     }
 }

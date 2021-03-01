@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Unity.Entities;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum TokenColours
 {
@@ -39,6 +40,14 @@ public class GameManager : MonoBehaviour
 
     public bool refreshDynamicBuffers = false;
 
+    public Text objectiveText;
+    public Text moveText;
+
+    [Header("Objective")] 
+    public TokenColours objectiveColour;
+    public int objectiveAmount;
+    public int movesAllowed;
+
     private void Awake()
     {
         if (Instance == null)
@@ -57,6 +66,24 @@ public class GameManager : MonoBehaviour
         {
             GameObject spawnedSpawner = Instantiate(spawner, spawnerTransforms[i], Quaternion.identity);
             spawner.GetComponent<SpawnerAuthoringComponent>()._numToSpawn = numToSpawn/spawnerTransforms.Length + 1;
+        }
+    }
+
+    private void Update()
+    {
+        if (objectiveAmount >= 0) objectiveText.text = objectiveAmount.ToString();
+
+        moveText.text = movesAllowed.ToString();
+        
+        if (objectiveAmount <= 0)
+        {
+            objectiveText.text = "0";
+            Debug.Log("Win!");
+        }
+
+        if (movesAllowed <= 0)
+        {
+            Debug.Log("Lose :(");
         }
     }
 
