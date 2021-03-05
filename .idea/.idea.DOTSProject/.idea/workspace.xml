@@ -22,7 +22,6 @@
     <list default="true" id="ac1b4857-15fb-44dd-8c3e-d89b569ae770" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DOTSProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DOTSProject/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spawner.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spawner.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/RaycastScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RaycastScript.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/TokenSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TokenSystem.cs" afterDir="false" />
@@ -65,9 +64,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/TokenTrigger.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/InputSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Spawner/SpawnerAuthoringComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TokenSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/RaycastScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
       </list>
     </option>
   </component>
@@ -134,7 +133,7 @@
       <workItem from="1613926479156" duration="5225000" />
       <workItem from="1614002793963" duration="9601000" />
       <workItem from="1614187620307" duration="10300000" />
-      <workItem from="1614627400713" duration="1765000" />
+      <workItem from="1614627400713" duration="2212000" />
     </task>
     <servers />
   </component>
