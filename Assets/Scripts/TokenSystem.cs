@@ -103,7 +103,7 @@ public class TokenSystem : JobComponentSystem
 
                             if (gm.tokensToMatch.Count >= 4 && e == gm.hitToken)
                             {
-                                
+                                gm.SpawnBomb(BombType.Line, EntityManager.GetComponentData<LocalToWorld>(e).Position);
                             }
                             EntityManager.DestroyEntity(e);
                         }

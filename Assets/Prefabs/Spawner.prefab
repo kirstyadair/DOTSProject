@@ -81,11 +81,5 @@ MonoBehaviour:
     maxIntToSpawn: 0
   - prefab: {fileID: 409751651803452769, guid: 5e3dcb6ab80a229488475dfea3e929e8, type: 3}
     maxIntToSpawn: 0
-  - prefab: {fileID: 315252955206731197, guid: 98b3934c88fa5234582724063ae3aec0, type: 3}
-    maxIntToSpawn: 0
-  - prefab: {fileID: 409751651803452769, guid: 5e3dcb6ab80a229488475dfea3e929e8, type: 3}
-    maxIntToSpawn: 0
-  - prefab: {fileID: 409751651803452769, guid: 5e3dcb6ab80a229488475dfea3e929e8, type: 3}
-    maxIntToSpawn: 0
   _spawnRate: 3
   _numToSpawn: 16

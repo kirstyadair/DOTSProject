@@ -11,9 +11,6 @@ public struct Spawner : IComponentData
     public Entity pinkSpawnerPrefab;
     public Entity purpleSpawnerPrefab;
     public Entity cyanSpawnerPrefab;
-    public Entity lineBombSpawnerPrefab;
-    public Entity crossBombSpawnerPrefab;
-    public Entity areaBombSpawnerPrefab;
     public int redSpawnerPrefabChances;
     public int blueSpawnerPrefabChances;
     public int greenSpawnerPrefabChances;
@@ -22,9 +19,6 @@ public struct Spawner : IComponentData
     public int pinkSpawnerPrefabChances;
     public int purpleSpawnerPrefabChances;
     public int cyanSpawnerPrefabChances;
-    public int lineBombSpawnerPrefabChances;
-    public int crossBombSpawnerPrefabChances;
-    public int areaBombSpawnerPrefabChances;
     public float timeBetweenSpawns;
     public float timeToNextSpawn;
     public int numToSpawn;

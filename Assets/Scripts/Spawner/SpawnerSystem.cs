@@ -42,9 +42,6 @@ public class SpawnerSystem : JobComponentSystem
                 allPrefabs.Add(spawner.pinkSpawnerPrefab);
                 allPrefabs.Add(spawner.purpleSpawnerPrefab);
                 allPrefabs.Add(spawner.cyanSpawnerPrefab);
-                allPrefabs.Add(spawner.lineBombSpawnerPrefab);
-                allPrefabs.Add(spawner.crossBombSpawnerPrefab);
-                allPrefabs.Add(spawner.areaBombSpawnerPrefab);
                 
                 List<int> allChances = new List<int>();
                 allChances.Add(spawner.redSpawnerPrefabChances);
@@ -55,9 +52,6 @@ public class SpawnerSystem : JobComponentSystem
                 allChances.Add(spawner.pinkSpawnerPrefabChances);
                 allChances.Add(spawner.purpleSpawnerPrefabChances);
                 allChances.Add(spawner.cyanSpawnerPrefabChances);
-                allChances.Add(spawner.lineBombSpawnerPrefabChances);
-                allChances.Add(spawner.crossBombSpawnerPrefabChances);
-                allChances.Add(spawner.areaBombSpawnerPrefabChances);
                 
                 Entity selectedPrefab = allPrefabs[0];
 

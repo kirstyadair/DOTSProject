@@ -72,7 +72,7 @@ public class RaycastScript : MonoBehaviour
 
             _gameManager.hitToken = Raycast(ray.origin, ray.direction * 10000f);
 
-            if (_gameManager.hitToken != null)
+            if (_gameManager.hitToken != null && _entityManager.HasComponent<TokenAuthoringComponent>(_gameManager.hitToken))
             {
                 _gameManager.hitTokenColour = _entityManager.GetComponentData<TokenAuthoringComponent>(_gameManager.hitToken).colour;
             }

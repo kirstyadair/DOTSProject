@@ -29,6 +29,10 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public GameObject tokenPrefab;
 
+    public GameObject lineBombPrefab;
+    public GameObject crossBombPrefab;
+    public GameObject areaBombPrefab;
+
     private int numSpawned = 0;
     private int numToSpawn = 20;
 
@@ -91,6 +95,22 @@ public class GameManager : MonoBehaviour
         if (movesAllowed == 0)
         {
             Debug.Log("Lose :(");
+        }
+    }
+
+    public void SpawnBomb(BombType type, Vector3 position)
+    {
+        if (type == BombType.Line)
+        {
+            Instantiate(lineBombPrefab, position, Quaternion.identity);
+        }
+        else if (type == BombType.Cross)
+        {
+            Instantiate(crossBombPrefab, position, Quaternion.identity);
+        }
+        else
+        {
+            Instantiate(areaBombPrefab, position, Quaternion.identity);
         }
     }
 }
