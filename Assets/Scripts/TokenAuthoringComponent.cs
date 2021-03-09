@@ -8,5 +8,4 @@ using UnityEngine;
 public struct TokenAuthoringComponent : IComponentData
 {
     public TokenColours colour;
-    public bool beingRemoved;
 }

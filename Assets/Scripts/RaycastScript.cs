@@ -67,7 +67,6 @@ public class RaycastScript : MonoBehaviour
         {
             if (_gameManager.movesAllowed <= 0) return;
             
-            _gameManager.tokenDistances.Clear();
             _gameManager.movesAllowed--;
             UnityEngine.Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 

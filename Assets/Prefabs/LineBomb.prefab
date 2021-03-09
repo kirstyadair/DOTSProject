@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 1044540074232525456}
   - component: {fileID: 1183420772869771317}
   - component: {fileID: 4042763238101430171}
+  - component: {fileID: 1939038801604377168}
+  - component: {fileID: 2355447727701256674}
   m_Layer: 0
   m_Name: LineBomb
   m_TagString: Untagged
@@ -109,3 +111,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ConversionMode: 0
+--- !u!114 &1939038801604377168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315252955206731197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4676599c23a074e499670edba73fc95e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2355447727701256674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315252955206731197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 583209f3306acbe4ca277ce3581de138, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  merging: 0
+  toExplode: 0

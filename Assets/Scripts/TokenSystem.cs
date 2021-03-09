@@ -13,28 +13,28 @@ public class TokenSystem : JobComponentSystem
 {
     protected override JobHandle OnUpdate(JobHandle inputDeps)
     {
-        if (GameManager.Instance.attemptMatch && GameManager.Instance.canAttemptNextMatch)
+        GameManager gm = GameManager.Instance;
+        if (gm.attemptMatch)
         {
-            GameManager.Instance.canAttemptNextMatch = false;
-            
-            Entities
+            if (EntityManager.HasComponent<TokenAuthoringComponent>(gm.hitToken))
+            {
+                Entities
                 .WithAll<TokenAuthoringComponent>()
                 .WithStructuralChanges()
                 .WithoutBurst()
                 .ForEach((Entity entity, TokenAuthoringComponent tokenAuthoringComponent, LocalToWorld position) =>
                 {
-                    if (entity == GameManager.Instance.hitToken)
+                    if (entity == gm.hitToken)
                     {
-                        GameManager.Instance.tokensToMatch.Add(GameManager.Instance.hitToken);
+                        gm.tokensToMatch.Add(gm.hitToken);
                         
                         foreach (EntityBufferElement e in EntityManager.GetBuffer<EntityBufferElement>(entity))
                         {
-                            if (tokenAuthoringComponent.colour != GameManager.Instance.hitTokenColour) continue;
+                            if (tokenAuthoringComponent.colour != gm.hitTokenColour) continue;
                             
-                            if (!GameManager.Instance.tokensToMatch.Contains(e.Value))
+                            if (!gm.tokensToMatch.Contains(e.Value))
                             {
-                                GameManager.Instance.tokensToMatch.Add(e.Value);
-                                tokenAuthoringComponent.beingRemoved = true;
+                                gm.tokensToMatch.Add(e.Value);
                             }
                         }
                     }
@@ -44,9 +44,9 @@ public class TokenSystem : JobComponentSystem
                         
                         foreach (EntityBufferElement e in EntityManager.GetBuffer<EntityBufferElement>(entity))
                         {
-                            if (tokenAuthoringComponent.colour != GameManager.Instance.hitTokenColour) continue;
+                            if (tokenAuthoringComponent.colour != gm.hitTokenColour) continue;
                             
-                            if (GameManager.Instance.tokensToMatch.Contains(e.Value))
+                            if (gm.tokensToMatch.Contains(e.Value))
                             {
                                 ignoreThisEntity = false;
                             }
@@ -56,43 +56,69 @@ public class TokenSystem : JobComponentSystem
                         {
                             foreach (EntityBufferElement e in EntityManager.GetBuffer<EntityBufferElement>(entity))
                             {
-                                if (tokenAuthoringComponent.colour != GameManager.Instance.hitTokenColour) continue;
+                                if (tokenAuthoringComponent.colour != gm.hitTokenColour) continue;
                             
-                                if (!GameManager.Instance.tokensToMatch.Contains(e.Value))
+                                if (!gm.tokensToMatch.Contains(e.Value))
                                 {
-                                    GameManager.Instance.tokensToMatch.Add(e.Value);
-                                    tokenAuthoringComponent.beingRemoved = true;
+                                    gm.tokensToMatch.Add(e.Value);
                                 }
                             }
                         }
                     }
-                }).Run();
+                }).Run();   
+            }
+            else if (EntityManager.HasComponent<BombAuthoringComponent>(gm.hitToken))
+            {
+                BombAuthoringComponent bombAC = EntityManager.GetComponentData<BombAuthoringComponent>(gm.hitToken);
+                if (bombAC.type == BombType.Line)
+                {
+                    Debug.Log(Physics.OverlapBox(EntityManager.GetComponentData<LocalToWorld>(gm.hitToken).Position,
+                        new Vector2(2, 1)).Length);
+                }
+                else if (bombAC.type == BombType.Cross)
+                {
+                    
+                }
+                else
+                {
+                    
+                }
+                // Do something based on bomb type
+            }
         }
         else
         {
-            if (GameManager.Instance.tokensToMatch.Count > 1)
+            if (gm.tokensToMatch.Count > 1)
             {
-                bool objective = false;
-                if (EntityManager.GetComponentData<TokenAuthoringComponent>(GameManager.Instance.tokensToMatch[0])
-                    .colour == GameManager.Instance.objectiveColour)
-                {
-                    objective = true;
-                }
+                gm.AddToSpawners(gm.tokensToMatch.Count);
                 
-                GameManager.Instance.AddToSpawners(GameManager.Instance.tokensToMatch.Count);
-                
-                foreach (Entity e in GameManager.Instance.tokensToMatch)
+                foreach (Entity e in gm.tokensToMatch)
                 {
                     if (e != Entity.Null)
                     {
-                        if (objective) GameManager.Instance.objectiveAmount--;
-                        EntityManager.DestroyEntity(e);
+                        if (EntityManager.HasComponent<TokenAuthoringComponent>(e))
+                        {
+                            if (EntityManager.GetComponentData<TokenAuthoringComponent>(e)
+                                .colour == gm.objectiveColour) gm.objectiveAmount--;
+
+                            if (gm.tokensToMatch.Count >= 4 && e == gm.hitToken)
+                            {
+                                
+                            }
+                            EntityManager.DestroyEntity(e);
+                        }
+                        else if (EntityManager.HasComponent<BombAuthoringComponent>(e))
+                        {
+                            BombAuthoringComponent bac = EntityManager.GetComponentData<BombAuthoringComponent>(e);
+                            bac.toExplode = true;
+                        }
+                        
                     }
                 }
 
             }
             
-            GameManager.Instance.tokensToMatch.Clear();
+            gm.tokensToMatch.Clear();
         }
 
         return default;

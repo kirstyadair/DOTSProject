@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2586124419447875778}
   - component: {fileID: 4463466562469612135}
   - component: {fileID: 1551479498332337609}
+  - component: {fileID: 6979521771200934691}
+  - component: {fileID: 4170687994286340296}
   m_Layer: 0
   m_Name: AreaBomb
   m_TagString: Untagged
@@ -109,3 +111,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ConversionMode: 0
+--- !u!114 &6979521771200934691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3025628643684524015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8870c0dd0317610449f5ffd73b890f7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4170687994286340296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3025628643684524015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 583209f3306acbe4ca277ce3581de138, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
+  merging: 0
+  toExplode: 0

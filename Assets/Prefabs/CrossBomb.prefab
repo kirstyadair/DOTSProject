@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 3284903240325635542}
   - component: {fileID: 3712368323637362547}
   - component: {fileID: 2013784137221177565}
+  - component: {fileID: 6348275057754230566}
+  - component: {fileID: 2269925127595340914}
   m_Layer: 0
   m_Name: CrossBomb
   m_TagString: Untagged
@@ -109,3 +111,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ConversionMode: 0
+--- !u!114 &6348275057754230566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2848704174346267387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20a4fb9058726d6468af01731e2ad90b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2269925127595340914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2848704174346267387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 583209f3306acbe4ca277ce3581de138, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+  merging: 0
+  toExplode: 0

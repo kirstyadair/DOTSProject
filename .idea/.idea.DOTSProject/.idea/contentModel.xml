@@ -7,6 +7,7 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
+          <e p="BombAuthoringComponent.cs" t="Include" />
           <e p="EntityBufferElement.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="InputSystem.cs" t="Include" />
@@ -17,9 +18,12 @@
             <e p="SpawnerSystem.cs" t="Include" />
           </e>
           <e p="Tags" t="Include">
+            <e p="AreaBomb.cs" t="Include" />
             <e p="Blue.cs" t="Include" />
+            <e p="CrossBomb.cs" t="Include" />
             <e p="Cyan.cs" t="Include" />
             <e p="Green.cs" t="Include" />
+            <e p="LineBomb.cs" t="Include" />
             <e p="Orange.cs" t="Include" />
             <e p="Pink.cs" t="Include" />
             <e p="Purple.cs" t="Include" />

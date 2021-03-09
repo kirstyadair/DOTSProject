@@ -17,6 +17,13 @@ public enum TokenColours
     Null
 }
 
+public enum BombType
+{
+    Line,
+    Cross,
+    Area
+}
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
@@ -33,7 +40,6 @@ public class GameManager : MonoBehaviour
     public Entity hitToken;
     public TokenColours hitTokenColour;
     public List<Entity> tokensToMatch = new List<Entity>();
-    public List<float> tokenDistances = new List<float>();
 
     public bool attemptMatch = false;
     public bool canAttemptNextMatch = true;
@@ -78,29 +84,13 @@ public class GameManager : MonoBehaviour
         if (objectiveAmount <= 0)
         {
             objectiveText.text = "0";
+            movesAllowed = -1;
             Debug.Log("Win!");
         }
 
-        if (movesAllowed <= 0)
+        if (movesAllowed == 0)
         {
             Debug.Log("Lose :(");
         }
     }
-
-    /*private void Start()
-    {
-        manager = World.DefaultGameObjectInjectionWorld.EntityManager;
-        GameObjectConversionSettings settings = GameObjectConversionSettings.FromWorld(World.DefaultGameObjectInjectionWorld, new BlobAssetStore());
-        tokenEntityPrefab = GameObjectConversionUtility.ConvertGameObjectHierarchy(tokenPrefab, settings);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (numSpawned < numToSpawn)
-        {
-            manager.Instantiate(tokenEntityPrefab);
-            numSpawned++;
-        }
-    }*/
 }
