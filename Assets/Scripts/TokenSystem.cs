@@ -26,7 +26,7 @@ public class TokenSystem : JobComponentSystem
                 {
                     if (entity == gm.hitToken)
                     {
-                        gm.tokensToMatch.Add(gm.hitToken);
+                        if (!gm.tokensToMatch.Contains(gm.hitToken)) gm.tokensToMatch.Add(gm.hitToken);
                         
                         foreach (EntityBufferElement e in EntityManager.GetBuffer<EntityBufferElement>(entity))
                         {
@@ -83,7 +83,6 @@ public class TokenSystem : JobComponentSystem
                 {
                     
                 }
-                // Do something based on bomb type
             }
         }
         else
@@ -110,7 +109,6 @@ public class TokenSystem : JobComponentSystem
                         else if (EntityManager.HasComponent<BombAuthoringComponent>(e))
                         {
                             BombAuthoringComponent bac = EntityManager.GetComponentData<BombAuthoringComponent>(e);
-                            bac.toExplode = true;
                         }
                         
                     }

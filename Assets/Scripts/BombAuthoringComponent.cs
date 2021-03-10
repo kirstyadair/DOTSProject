@@ -4,6 +4,5 @@ using Unity.Entities;
 public struct BombAuthoringComponent : IComponentData
 {
     public BombType type;
-    public bool merging;
-    public bool toExplode;
+    public bool toUpgrade;
 }

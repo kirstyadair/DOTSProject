@@ -8,6 +8,7 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="BombAuthoringComponent.cs" t="Include" />
+          <e p="BombMergingSystem.cs" t="Include" />
           <e p="EntityBufferElement.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="InputSystem.cs" t="Include" />

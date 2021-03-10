@@ -2092,7 +2092,7 @@ MonoBehaviour:
   moveText: {fileID: 961920482}
   objectiveColour: 0
   objectiveAmount: 20
-  movesAllowed: 10
+  movesAllowed: 50
 --- !u!4 &2034761640
 Transform:
   m_ObjectHideFlags: 0

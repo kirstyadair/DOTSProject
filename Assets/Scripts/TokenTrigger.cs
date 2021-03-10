@@ -23,7 +23,10 @@ public class TokenTrigger : JobComponentSystem
         public ComponentDataFromEntity<Pink> pink;
         public ComponentDataFromEntity<Purple> purple;
         public ComponentDataFromEntity<Cyan> cyan;
-            
+        public ComponentDataFromEntity<LineBomb> lineBomb;
+        public ComponentDataFromEntity<CrossBomb> crossBomb;
+        public EntityCommandBuffer ecb;
+        
         public void Execute(CollisionEvent triggerEvent)
         {
             Entity a = triggerEvent.Entities.EntityA;
@@ -31,6 +34,19 @@ public class TokenTrigger : JobComponentSystem
 
             if (!_entityManager.HasComponent<EntityBufferElement>(a) || !_entityManager.HasComponent<EntityBufferElement>(b))
             {
+                if (_entityManager.HasComponent<BombAuthoringComponent>(a) && _entityManager.HasComponent<BombAuthoringComponent>(b))
+                {
+                    BombAuthoringComponent aBAC = _entityManager.GetComponentData<BombAuthoringComponent>(a);
+                    BombAuthoringComponent bBAC = _entityManager.GetComponentData<BombAuthoringComponent>(b);
+
+                    if (aBAC.type == bBAC.type && !aBAC.toUpgrade && !bBAC.toUpgrade)
+                    {
+                        ecb.DestroyEntity(a);
+                        bBAC.toUpgrade = true;
+                        _entityManager.AddComponentData(b, bBAC);
+                    }
+                    
+                }
                 return;
             }
 
@@ -89,8 +105,9 @@ public class TokenTrigger : JobComponentSystem
         }
     }
 
-    private BuildPhysicsWorld _buildPhysicsWorld;
-    private StepPhysicsWorld _stepPhysicsWorld;
+    [ReadOnly] private BuildPhysicsWorld _buildPhysicsWorld;
+    [ReadOnly] private StepPhysicsWorld _stepPhysicsWorld;
+    private EndSimulationEntityCommandBufferSystem _ecb;
     private static EntityManager _entityManager;
 
     protected override void OnCreate()
@@ -98,6 +115,7 @@ public class TokenTrigger : JobComponentSystem
         base.OnCreate();
         _buildPhysicsWorld = World.GetOrCreateSystem<BuildPhysicsWorld>();
         _stepPhysicsWorld = World.GetOrCreateSystem<StepPhysicsWorld>();
+        _ecb = World.GetOrCreateSystem<EndSimulationEntityCommandBufferSystem>();
         _entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
     }
 
@@ -112,8 +130,15 @@ public class TokenTrigger : JobComponentSystem
         triggerJob.pink = GetComponentDataFromEntity<Pink>();
         triggerJob.purple = GetComponentDataFromEntity<Purple>();
         triggerJob.cyan = GetComponentDataFromEntity<Cyan>();
+        triggerJob.lineBomb = GetComponentDataFromEntity<LineBomb>();
+        triggerJob.crossBomb = GetComponentDataFromEntity<CrossBomb>();
+        
+        EntityCommandBuffer newECB = _ecb.CreateCommandBuffer();
+        triggerJob.ecb = newECB;
 
         JobHandle job = triggerJob.Schedule(_stepPhysicsWorld.Simulation, ref _buildPhysicsWorld.PhysicsWorld, inputDeps);
+        
+        _ecb.AddJobHandleForProducer(job);
         job.Complete();
         return job;
     }
