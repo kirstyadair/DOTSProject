@@ -109,6 +109,8 @@ public class TokenSystem : JobComponentSystem
                         else if (EntityManager.HasComponent<BombAuthoringComponent>(e))
                         {
                             BombAuthoringComponent bac = EntityManager.GetComponentData<BombAuthoringComponent>(e);
+                            bac.toExplode = true;
+                            EntityManager.AddComponentData(e, bac);
                         }
                         
                     }

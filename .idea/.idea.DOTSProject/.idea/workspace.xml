@@ -22,14 +22,11 @@
     <list default="true" id="ac1b4857-15fb-44dd-8c3e-d89b569ae770" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DOTSProject/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DOTSProject/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DOTSProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DOTSProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/AreaBomb.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/AreaBomb.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CrossBomb.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/CrossBomb.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/LineBomb.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/LineBomb.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BombAuthoringComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BombAuthoringComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BombAuthoringComponent.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BombAuthoringComponent.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BombMergingSystem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BombMergingSystem.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/TokenSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TokenSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TokenTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TokenTrigger.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,9 +41,7 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@0.14.0-preview.18/Unity.Entities/EntityComponentStoreDebug.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tags/Yellow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BombAuthoringComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tags/LineBomb.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BombMergingSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TokenTrigger.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -73,13 +68,15 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/TokenAuthoringComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Spawner/Spawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Spawner/SpawnerAuthoringComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Spawner/SpawnerSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/RaycastScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BombMergingSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TokenTrigger.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BombAuthoringComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TokenSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/TokenTrigger.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/BombMergingSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BombExplodeSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Spawner/SpawnerSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Bombs/BombExplodeSystem.cs" />
       </list>
     </option>
   </component>
@@ -147,7 +144,7 @@
       <workItem from="1614002793963" duration="9601000" />
       <workItem from="1614187620307" duration="10300000" />
       <workItem from="1614627400713" duration="2212000" />
-      <workItem from="1615298969469" duration="14200000" />
+      <workItem from="1615298969469" duration="16426000" />
     </task>
     <servers />
   </component>
