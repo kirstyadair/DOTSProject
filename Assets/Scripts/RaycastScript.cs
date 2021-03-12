@@ -75,11 +75,16 @@ public class RaycastScript : MonoBehaviour
             if (_gameManager.hitToken != null && _entityManager.HasComponent<TokenAuthoringComponent>(_gameManager.hitToken))
             {
                 _gameManager.hitTokenColour = _entityManager.GetComponentData<TokenAuthoringComponent>(_gameManager.hitToken).colour;
+                _gameManager.attemptMatch = true;
+                _gameManager.canAttemptNextMatch = true;
             }
-            
-            _gameManager.attemptMatch = true;
-            _gameManager.canAttemptNextMatch = true;
-            Entity e = _gameManager.hitToken;
+            else if (_gameManager.hitToken != null &&
+                     _entityManager.HasComponent<BombAuthoringComponent>(_gameManager.hitToken))
+            {
+                BombAuthoringComponent bac = _entityManager.GetComponentData<BombAuthoringComponent>(_gameManager.hitToken);
+                bac.toExplode = true;
+                _entityManager.AddComponentData(_gameManager.hitToken, bac);
+            }
         }
 
         if (Input.GetMouseButtonUp(0))
