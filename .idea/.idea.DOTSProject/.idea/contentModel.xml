@@ -11,6 +11,7 @@
             <e p="BombAuthoringComponent.cs" t="Include" />
             <e p="BombExplodeSystem.cs" t="Include" />
             <e p="BombMergingSystem.cs" t="Include" />
+            <e p="TokenAndBombRemovalSystem.cs" t="Include" />
           </e>
           <e p="EntityBufferElement.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
